@@ -1,0 +1,9 @@
+.attendance__panel {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.attendance__button {
+    width: 100%;
+    text-align: center;
+}
