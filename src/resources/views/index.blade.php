@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="attendance__comment">
-    <!-- todo ユーザー名表示されるようにする  -->
-    <h1>さんお疲れ様です</h1>
+    <!-- ユーザー名表示する  -->
+    <h2>{{ Auth::user()->name }}さんお疲れ様です!</h2>
 </div>
 <div class="attendance__content">
     <div class="attendance__panel">

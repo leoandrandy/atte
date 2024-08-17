@@ -1,9 +1,63 @@
-.attendance__panel {
+.attendance__comment {
     margin: 0 auto;
-    width: 70%;
+    padding: 30px 15px;
+    text-align: center;
 }
 
-.attendance__button {
-    width: 100%;
+.attendance__panel {
+    display: flex;
+    flex-wrap: wrap;
+    /* ボタンを2行に並べる */
+    justify-content: center;
+    /* 各行のボタンを中央に揃える */
+    align-items: center;
+    /* 縦方向に中央揃え */
+    height: 100vh;
+    /* コンテナの高さを画面全体に設定 */
+}
+
+
+
+.attendance__button-submit {
+    padding: 5px;
+    width: 450px;
+    height: 200px;
+    margin: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.attendance__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.attendance-table {
+    margin: 30px auto;
+    width: 70%;
     text-align: center;
+}
+
+.attendance-table__inner {
+    width: 100%;
+}
+
+.attendance-table__row {
+    border-bottom: 1px solid #ddd;
+}
+
+.attendance-table__header {
+    padding: 12px;
+    width: 20%;
+    font-weight: bold;
+}
+
+.attendance-table__item {
+    padding: 12px;
+    width: 20%;
 }

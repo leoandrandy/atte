@@ -1,3 +1,63 @@
 .header {
-    background: #000;
+    background: #FFFFFF;
+}
+
+.header__inner {
+    background: blue;
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header-utilities {
+    background: pink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    background: green;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header-utilities nav {
+    background: orange;
+    width: 18%;
+}
+
+.header-nav {
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav__link {
+    background: yellow;
+    text-decoration: none;
+    gap: 20px
+}
+
+.header-nav__button {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer {
+    background: aquamarine;
+    margin: 0 auto;
+    padding: 20px 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer__logo {
+    background: bisque;
+    margin: 0 auto;
+    width: 25%;
 }
