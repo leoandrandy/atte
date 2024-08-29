@@ -1,7 +1,18 @@
-.attendance__comment {
+.attendance__content {
+    background: #F2F2F2;
     margin: 0 auto;
     padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.attendance__comment {
+    margin: 0 auto;
+    padding: 10px 10px;
     text-align: center;
+}
+
+.attendance__comment-text {
+    margin: 0 auto;
 }
 
 .attendance__panel {
@@ -25,16 +36,9 @@
     margin: 30px;
     border: none;
     border-radius: 5px;
-    background: #000;
-    color: #fff;
+    background: #fff;
     font-size: 20px;
     cursor: pointer;
-}
-
-.attendance__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
 }
 
 .attendance-table {
