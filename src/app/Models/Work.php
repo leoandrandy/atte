@@ -21,4 +21,9 @@ class Work extends Model
     {
         $this->belongsTo(User::class);
     }
+
+    public function rests()
+    {
+        return $this->hasMany(Rest::class, 'work_id');
+    }
 }
