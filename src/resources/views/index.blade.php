@@ -18,33 +18,59 @@
     @endif
 
     @php
+    $now_date = now()->toDateString();
     $status = $work ? $work->status : null;
     @endphp
 
 
     <div class="attendance__panel">
         <form class="attendance__button" action="{{ route('work') }}" method="post">
-            <p>現在のステータス: {{ $status }}</p>
             @csrf
-            <button class="attendance__button-submit" type="submit" name="action" value="work_start"
-                @if($status !==null) disabled @endif>
-                勤務開始
-            </button>
-
-            <button class="attendance__button-submit" type="submit" name="action" value="work_end"
-                @if($status !==1) disabled @endif>
-                勤務終了
-            </button>
-
-            <button class="attendance__button-submit" type="submit" name="action" value="rest_start"
-                @if($status !==1) disabled @endif>
-                休憩開始
-            </button>
-
-            <button class="attendance__button-submit" type="submit" name="action" value="rest_end"
-                @if($status !==3) disabled @endif>
-                休憩終了
-            </button>
+            <p>現在のステータス: {{ $status }}</p>
+            <div class="attendance__item">
+                @if ($work && $work->date === $now_date && $work->work_start)
+                <button class="attendance__button-submit" type="submit" name="action" value="work_start" disabled>
+                    勤務開始
+                </button>
+                @else
+                <button class="attendance__button-submit" type="submit" name="action" value="work_start">
+                    勤務開始
+                </button>
+                @endif
+            </div>
+            <div class="attendance_item">
+                @if ($status == 1)
+                <button class="attendance__button-submit" type="submit" name="action" value="work_end">
+                    勤務終了
+                </button>
+                @else
+                <button class="attendance__button-submit" type="submit" name="action" value="work_end" disabled>
+                    勤務終了
+                </button>
+                @endif
+            </div>
+            <div class="attendance_item">
+                @if ($status == 1)
+                <button class="attendance__button-submit" type="submit" name="action" value="rest_start">
+                    休憩開始
+                </button>
+                @else
+                <button class="attendance__button-submit" type="submit" name="action" value="rest_start" disabled>
+                    休憩開始
+                </button>
+                @endif
+            </div>
+            <div class="attendance_item">
+                @if ($status == 3)
+                <button class="attendance__button-submit" type="submit" name="action" value="rest_end">
+                    休憩終了
+                </button>
+                @else
+                <button class="attendance__button-submit" type="submit" name="action" value="rest_end" disabled>
+                    休憩終了
+                </button>
+                @endif
+            </div>
         </form>
     </div>
 </div>

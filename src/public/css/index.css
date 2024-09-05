@@ -41,6 +41,11 @@
     cursor: pointer;
 }
 
+.attendance-item {
+    display: flex;
+    margin: 0 auto;
+}
+
 .attendance-table {
     margin: 30px auto;
     width: 70%;
