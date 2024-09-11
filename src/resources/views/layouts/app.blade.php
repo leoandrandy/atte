@@ -24,7 +24,7 @@
                         </li>
                         <li class="header-nav__item">
                             <!-- todo /attendanceページへのリンク -->
-                            <a class="header-nav__link" href="">日付一覧</a>
+                            <a class="header-nav__link" href=" {{ route('list', ['date' => now()->format('Y-m-d')]) }}">日付一覧</a>
                         </li>
                         <li class="header-nav__item">
                             <form class="form" action="/logout" method="post">

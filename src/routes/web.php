@@ -20,3 +20,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/work', [AttendanceController::class, 'work'])->name('work');
+
+Route::get('/work/list', [AttendanceController::class, 'list'])->name('list');

@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 
-.attendance-item {
+.attendance_item {
     display: flex;
     margin: 0 auto;
 }

@@ -9,6 +9,11 @@ class Rest extends Model
 {
     use HasFactory;
 
+    protected $dates = [
+        'rest_start',
+        'rest_end',
+    ];
+
     protected $fillable = [
         'works_id',
         'rest_start',

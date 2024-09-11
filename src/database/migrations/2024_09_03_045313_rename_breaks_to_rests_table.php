@@ -23,6 +23,6 @@ class RenameBreaksToRestsTable extends Migration
      */
     public function down()
     {
-        Schema::table('rests','breaks');
+        Schema::rename('rests','breaks');
     }
 }

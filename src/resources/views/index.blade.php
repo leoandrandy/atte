@@ -27,7 +27,7 @@
         <form class="attendance__button" action="{{ route('work') }}" method="post">
             @csrf
             <p>現在のステータス: {{ $status }}</p>
-            <div class="attendance__item">
+            
                 @if ($work && $work->date === $now_date && $work->work_start)
                 <button class="attendance__button-submit" type="submit" name="action" value="work_start" disabled>
                     勤務開始
@@ -37,8 +37,7 @@
                     勤務開始
                 </button>
                 @endif
-            </div>
-            <div class="attendance_item">
+            
                 @if ($status == 1)
                 <button class="attendance__button-submit" type="submit" name="action" value="work_end">
                     勤務終了
@@ -48,8 +47,7 @@
                     勤務終了
                 </button>
                 @endif
-            </div>
-            <div class="attendance_item">
+
                 @if ($status == 1)
                 <button class="attendance__button-submit" type="submit" name="action" value="rest_start">
                     休憩開始
@@ -59,8 +57,7 @@
                     休憩開始
                 </button>
                 @endif
-            </div>
-            <div class="attendance_item">
+
                 @if ($status == 3)
                 <button class="attendance__button-submit" type="submit" name="action" value="rest_end">
                     休憩終了
@@ -70,7 +67,6 @@
                     休憩終了
                 </button>
                 @endif
-            </div>
         </form>
     </div>
 </div>
