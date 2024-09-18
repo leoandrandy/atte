@@ -15,10 +15,14 @@ use App\Http\Controllers\AttendanceController;
 |
 */
 
+
+//ログインホーム画面
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
 });
 
+//打刻処理
 Route::post('/work', [AttendanceController::class, 'work'])->name('work');
 
-Route::get('/work/list', [AttendanceController::class, 'list'])->name('list');
+//日付別一覧ページ
+Route::get('/attendance', [AttendanceController::class, 'list'])->name('list');

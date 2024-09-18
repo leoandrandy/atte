@@ -1,0 +1,137 @@
+.container {
+    background: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 全体を中央に寄せる */
+    text-align: center;
+}
+
+.work_table {
+    width: 100%;
+    max-width: 1000px;
+    /* テーブルの最大幅を制限して中央に配置 */
+    margin: 0 auto;
+    /* 左右の余白を自動で取ることで中央配置 */
+}
+
+.list_header--item {
+    font-size: 1.5rem;
+    /* 文字サイズを大きく */
+    display: flex;
+    justify-content: center;
+    /* 水平方向の中央寄せ */
+    align-items: center;
+    /* 垂直方向の中央寄せ */
+    gap: 20px;
+    /* 矢印と日付の間にスペース */
+    margin: 40px 0;
+}
+
+.list_header--item a {
+    display: inline-block;
+    padding: 5px 10px;
+    /* ボタンの内側の余白を追加 */
+    border: 1px solid #3B60E4;
+    /* ボタンの枠線を追加 */
+    border-radius: 3px;
+    /* ボタンの角を少し丸める */
+    background-color: #FFFFFF;
+    /* ボタンの背景色 */
+    text-decoration: none;
+    /* 下線を消す */
+    color: #3B60E4;
+    /* ボタン内の矢印の色 */
+    font-weight: bold;
+    /* 文字を太く */
+}
+
+.list_header--item a:hover {
+    background-color: #E0E0E0;
+    /* ホバー時の背景色を変更 */
+}
+
+.table {
+    width: 100%;
+    /* テーブル全体の幅を100%に */
+    table-layout: auto;
+    /* 列の幅を自動調整 */
+    border-top: solid 1px #A7A7A7;
+    /* 各行の上に線を引く */
+}
+
+th,td {
+    padding: 15px 20px;
+    white-space: nowrap;
+    /* 文字が二行になるのを防ぐ */
+}
+
+th {
+    padding: 20px 40px;
+}
+
+
+td {
+    padding: 25px 40px;
+    background-color: #F2F2F2;
+    text-align: center;
+    border-top: solid 1px #A7A7A7;
+    /* 各行の上に線を引く */
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    
+    list-style: none;
+    /* デフォルトのリストスタイルを削除 */
+    padding: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-block;
+    padding: 10px 20px;
+    /* ボタンの内側の余白 */
+    border: 1px solid #e2e2e2;
+    /* ボタンの枠線 */
+    
+    background-color: #FFFFFF;
+    /* 背景色 */
+    text-decoration: none;
+    /* 下線を消す */
+    color: #2384CF;
+    /* 文字の色 */
+
+}
+
+.pagination li a:hover {
+    background-color: #E0E0E0;
+    /* ホバー時の背景色 */
+}
+
+.pagination li.active span {
+    background-color: #2384CF;
+    /* アクティブなページの背景色 */
+    color: #FFF;
+    /* アクティブなページの文字色 */
+    border-color: #2384CF;
+    /* アクティブなページの枠線色 */
+}
+
+.pagination li.disabled span {
+    color: #A7A7A7;
+    /* 無効なリンクの文字色 */
+    border-color: #A7A7A7;
+    /* 無効なリンクの枠線色 */
+}

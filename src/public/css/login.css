@@ -1,7 +1,8 @@
 .login__content {
+    background: #F2F2F2;
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
+    max-width: 100%;
 }
 
 .login-form__heading {

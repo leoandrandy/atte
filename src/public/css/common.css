@@ -3,53 +3,53 @@
 }
 
 .header__inner {
-    background: blue;
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
 }
 
 .header-utilities {
-    background: pink;
+    margin: 0 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .header__logo {
-    background: green;
     text-decoration: none;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 36px;
 }
 
 .header-utilities nav {
-    background: orange;
-    width: 18%;
+    width: 25%;
 }
 
 .header-nav {
-    background: red;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .header-nav__link {
-    background: yellow;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
     gap: 20px
 }
 
 .header-nav__button {
     border: none;
     background: transparent;
+    font-weight: bold;
     font-size: 16px;
+    white-space: nowrap;
     cursor: pointer;
 }
 
 .footer {
-    background: aquamarine;
     margin: 0 auto;
     padding: 20px 15px;
     width: 100%;
@@ -57,7 +57,7 @@
 }
 
 .footer__logo {
-    background: bisque;
     margin: 0 auto;
     width: 25%;
+    font-weight: bold;
 }

@@ -26,8 +26,6 @@
     <div class="attendance__panel">
         <form class="attendance__button" action="{{ route('work') }}" method="post">
             @csrf
-            <p>現在のステータス: {{ $status }}</p>
-            
                 @if ($work && $work->date === $now_date && $work->work_start)
                 <button class="attendance__button-submit" type="submit" name="action" value="work_start" disabled>
                     勤務開始

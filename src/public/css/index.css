@@ -2,7 +2,7 @@
     background: #F2F2F2;
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
+    max-width: 100%;
 }
 
 .attendance__comment {
@@ -15,58 +15,32 @@
     margin: 0 auto;
 }
 
+.alert {
+    text-align: center;
+}
+
 .attendance__panel {
+    margin: 15px auto;
     display: flex;
     flex-wrap: wrap;
     /* ボタンを2行に並べる */
     justify-content: center;
-    /* 各行のボタンを中央に揃える */
+    /* 横方向に中央に揃え */
     align-items: center;
     /* 縦方向に中央揃え */
-    height: 100vh;
-    /* コンテナの高さを画面全体に設定 */
+    max-width: 960px;
+    /* パネル全体の幅を適切に設定 */
 }
-
-
 
 .attendance__button-submit {
-    padding: 5px;
-    width: 450px;
+    padding: 20px 20px;
+    width: 430px;
     height: 200px;
-    margin: 30px;
+    margin: 20px;
     border: none;
     border-radius: 5px;
-    background: #fff;
+    background: #FFFFFF;
     font-size: 20px;
-    cursor: pointer;
-}
-
-.attendance_item {
-    display: flex;
-    margin: 0 auto;
-}
-
-.attendance-table {
-    margin: 30px auto;
-    width: 70%;
-    text-align: center;
-}
-
-.attendance-table__inner {
-    width: 100%;
-}
-
-.attendance-table__row {
-    border-bottom: 1px solid #ddd;
-}
-
-.attendance-table__header {
-    padding: 12px;
-    width: 20%;
     font-weight: bold;
-}
-
-.attendance-table__item {
-    padding: 12px;
-    width: 20%;
+    cursor: pointer;
 }

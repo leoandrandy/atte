@@ -12,7 +12,7 @@
     <form class="form" action="/login" method="post">
         @csrf
         <div class="form__group">
-            
+
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" />
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="form__group">
-            
+
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input type="password" name="password" placeholder="パスワード" />
@@ -46,4 +46,5 @@
         <a class="register__button-submit" href="/register">会員登録</a>
     </div>
 </div>
+
 @endsection

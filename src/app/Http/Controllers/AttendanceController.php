@@ -98,13 +98,13 @@ class AttendanceController extends Controller
         // 日付に基づいてデータを取得
         $works = Work::whereDate('date', $date)
         ->with('user') // リレーションをロード
-        ->paginate(10);
+        ->paginate(5);
 
         // 「前へ」「次へ」のための日付計算
         $previousDate = Carbon::parse($date)->subDay()->format('Y-m-d');
         $nextDate = Carbon::parse($date)->addDay()->format('Y-m-d');
 
         // ビューにデータと日付を渡す
-        return view('list_by_date', compact('date', 'works', 'previousDate', 'nextDate'));
+        return view('attendance', compact('date', 'works', 'previousDate', 'nextDate'));
     }
 }
