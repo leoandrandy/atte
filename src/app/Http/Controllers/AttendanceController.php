@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use App\Models\Work;
 use App\Models\Rest;
@@ -11,6 +14,52 @@ use Carbon\Carbon;
 
 class AttendanceController extends Controller
 {
+    // ログインフォームを表示
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    // ログイン処理
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/'); // ログイン成功時
+        }
+
+        return back()->withErrors([
+            'email' => '認証情報が正しくありません。',
+        ]);
+    }
+
+    // ログアウト処理
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
+
+    // 会員登録フォームを表示
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
+    // 会員登録処理
+    public function register(RegisterRequest $request)
+    {
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        Auth::login($user);
+
+        return redirect('/');
+    }
     
     //打刻処理
     public function work(Request $request)

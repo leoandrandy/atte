@@ -21,6 +21,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
 });
 
+// ログイン画面へのルート
+Route::get('/login', [AttendanceController::class, 'showLoginForm']);
+Route::post('/login', [AttendanceController::class, 'login']);
+
+// ログアウトのルート
+Route::post('/logout', [AttendanceController::class, 'logout']);
+
+// 登録画面へのルート
+Route::get('/register', [AttendanceController::class, 'showRegistrationForm']);
+Route::post('/register', [AttendanceController::class, 'register']);
+
 //打刻処理
 Route::post('/work', [AttendanceController::class, 'work'])->name('work');
 
