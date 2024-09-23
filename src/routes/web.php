@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AttendanceController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,21 @@ use App\Http\Controllers\AttendanceController;
 */
 
 
-//ログインホーム画面
-Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
+// ログインホーム画面
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('home');  // ログイン済みの場合、ホーム画面へリダイレクト
+    } else {
+        return redirect()->route('login'); // 未ログインの場合、ログイン画面へリダイレクト
+    }
 });
 
+// ホーム画面
+Route::middleware('auth')->get('/home', [AuthController::class, 'index'])->name('home');
+
+
 // ログイン画面へのルート
-Route::get('/login', [AttendanceController::class, 'showLoginForm']);
+Route::get('/login', [AttendanceController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AttendanceController::class, 'login']);
 
 // ログアウトのルート
