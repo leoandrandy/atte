@@ -35,7 +35,7 @@ class AttendanceController extends Controller
     }
 
     // ログアウト処理
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
         return redirect('/login');

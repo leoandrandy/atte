@@ -27,6 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => ['required', 'string', 'max:191', 'regex:/^[\p{L}\p{M}\s]+$/u'],
             'email' => ['required', 'string', 'email', 'max:191', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'max:191', 'confirmed'],
+            'password_confirmation' => ['required'],
         ];
     }
 

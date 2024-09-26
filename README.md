@@ -15,15 +15,17 @@
 **Dockerビルド**
 1. ファイルを作成したいディレクトリ以下に開発環境をクローンする  
 `git clone git@github.com:leoandrandy/atte.git`
-2. DockerDesktopアプリを立ち上げる  
+2. `docker-compose.yml`ファイルがあるディレクトリへ移動する  
+`cd atte`
+3. DockerDesktopアプリを立ち上げる  
 `docker-compose up -d --build`
 
 **Laravel環境構築**
-1. `docker-compose exec php bash`
+1. `docker-compose exec php bash`（PHPコンテナに入る）
 2. `composer install`
 3. 「.env.example」ファイルを 「.env」ファイルに命名変更。  
 `cp .env.example .env`  
-`exit`
+`exit`（PHPコンテナから出る）
 4. .envファイルの修正  
 「docker-compose.yml」のenvironment部分と同じになるよう環境変数を変更
 ``` text
@@ -33,18 +35,21 @@ DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
-```
-5. アプリケーションキーの作成
+```  
+※権限エラーが出てしまう場合は下記コマンドを実行  
+`sudo chmod -R 777 src`  
+
+5. アプリケーションキーの作成(PHPコンテナ)
 ``` bash
 php artisan key:generate
 ```
 
-6. マイグレーションの実行
+6. マイグレーションの実行(PHPコンテナ)
 ``` bash
 php artisan migrate
 ```
 
-7. シーディングの実行
+7. シーディングの実行(PHPコンテナ)
 ``` bash
 php artisan db:seed
 ```
