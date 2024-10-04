@@ -45,10 +45,10 @@ class CustomVerifyMail extends VerifyEmail
         $verificationUrl = $this->verificationUrl($notifiable);
 
         return (new MailMessage)
-        ->subject(Lang::get(__("メールアドレスの確認")))
-        ->markdown('mail.verify_mail', [
-            'verify_url' => $verificationUrl
-        ]);
+            ->subject(Lang::get(__("メールアドレスの確認")))
+            ->markdown('mail.verify_mail', [
+                'verify_url' => $verificationUrl
+            ]);
     }
 
     /**

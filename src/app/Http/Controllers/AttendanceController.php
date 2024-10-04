@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -57,7 +58,8 @@ class AttendanceController extends Controller
         ]);
 
         Auth::login($user);
-
+        event(new Registered($user))
+;
         if (!$user->hasVerifiedEmail()) {
             return redirect()->route('verification.notice'); // メール認証ページへリダイレクト
         }
