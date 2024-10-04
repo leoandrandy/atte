@@ -58,7 +58,11 @@ class AttendanceController extends Controller
 
         Auth::login($user);
 
-        return redirect('/');
+        if (!$user->hasVerifiedEmail()) {
+            return redirect()->route('verification.notice'); // メール認証ページへリダイレクト
+        }
+
+        return redirect()->route('home'); // 認証済みの場合はホームへ
     }
     
     //打刻処理
